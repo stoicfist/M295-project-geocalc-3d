@@ -58,14 +58,19 @@ public class SecurityConfig {
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
                         .allowedMethods("HEAD", "GET", "PUT", "POST", "DELETE", "PATCH", "OPTIONS")
-                        .allowedOrigins("http://localhost:4200");
+                        .allowedOrigins(
+                            "http://localhost:4200",
+                            "http://frontend:4200",
+                            "http://frontend",
+                            "http://localhost"
+                        );
             }
         };
     }
 
     @Bean
     public JwtDecoder jwtDecoder() {
-        return NimbusJwtDecoder.withJwkSetUri("http://localhost:8080/realms/GeoCalc3D/protocol/openid-connect/certs")
+        return NimbusJwtDecoder.withJwkSetUri("http://keycloak:8080/realms/GeoCalc3D/protocol/openid-connect/certs")
             .build();
 }
 
