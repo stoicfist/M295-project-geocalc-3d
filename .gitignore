@@ -1,23 +1,63 @@
-# === Java / Spring Boot Backend ===
+# === Project-specific (peter.ngo.geocalc3d) ===
 peter.ngo.geocalc3d/target/
 peter.ngo.geocalc3d/*.log
 peter.ngo.geocalc3d/hs_err_pid*.log
 peter.ngo.geocalc3d/.vscode/
-
-# === Maven ===
 peter.ngo.geocalc3d/.mvn/
 peter.ngo.geocalc3d/pom.xml.tag
 peter.ngo.geocalc3d/pom.xml.releaseBackup
 peter.ngo.geocalc3d/pom.xml.versionsBackup
 peter.ngo.geocalc3d/release.properties
 
+# === Root-level helper/docs that shouldn't be tracked ===
+HELP.md
+
+# === Build outputs (Java / Spring Boot / Maven / Gradle) ===
+target/
+build/
+# Keep targets/builds generated under source trees (rare but sometimes used in examples)
+!**/src/main/**/target/
+!**/src/test/**/target/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# === Maven wrapper ===
+!.mvn/wrapper/maven-wrapper.jar
+
+# === Logs & JVM crash reports ===
+*.log
+hs_err_pid*.log
+
 # === IDEs & Editors ===
+# IntelliJ IDEA
 .idea/
-.vscode/
+*.iws
 *.iml
+*.ipr
+
+# Eclipse / STS
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Vim / editors
 *.swp
 *.swo
 
-# === macOS / Windows ===
+# === OS junk ===
 .DS_Store
 Thumbs.db
