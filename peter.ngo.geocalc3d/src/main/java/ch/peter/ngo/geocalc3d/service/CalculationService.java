@@ -25,24 +25,27 @@ public class CalculationService {
         double surface = 0;
 
         switch (type) {
-            case "kugel":
+            case "kugel": {
                 double r = p.getOrDefault("radius", 0.0);
                 volume = (4.0 / 3.0) * Math.PI * Math.pow(r, 3);
                 surface = 4 * Math.PI * Math.pow(r, 2);
                 break;
-            case "quader":
+            }
+            case "quader": {
                 double a = p.getOrDefault("a", 0.0);
                 double b = p.getOrDefault("b", 0.0);
                 double c = p.getOrDefault("c", 0.0);
                 volume = a * b * c;
                 surface = 2 * (a * b + a * c + b * c);
                 break;
-            case "kegel":
-                r = p.getOrDefault("radius", 0.0);
+            }
+            case "kegel": {
+                double r = p.getOrDefault("radius", 0.0);
                 double h = p.getOrDefault("hoehe", 0.0);
                 volume = (1.0 / 3.0) * Math.PI * Math.pow(r, 2) * h;
                 surface = Math.PI * r * (r + Math.sqrt(r * r + h * h));
                 break;
+            }
             default:
                 throw new IllegalArgumentException("Unbekannter ShapeType: " + type);
         }
